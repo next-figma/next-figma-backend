@@ -5,6 +5,7 @@ import { connectToDatabase } from "./db";
 import { userRouter } from "./user/user.controller";
 import { statusRouter } from "./status/status.controller";
 import { countryRouter } from "./country/country.controller";
+import { departmentRouter } from "./department/department.controller";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ async function main() {
   app.use("/api/users", userRouter);
   app.use("/api/statuses", statusRouter);
   app.use("/api/countries", countryRouter);
+  app.use("/api/departments", departmentRouter);
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
